@@ -1,5 +1,6 @@
 import os
 import logging
+import time
 from kanban import Kanban
 from scrum import Scrum
 
@@ -32,7 +33,7 @@ def main():
         kanban.run(test_data_list)
     # testing scrum:
     elif test_agile == "scrum":
-        scrum = Scrum()
+        scrum = Scrum(os.environ.get("SVK_TEST_SPRINT_SIZE") or 32) # default sprint size is 32 points
         scrum.run(test_data_list)
 
     return 0

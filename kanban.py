@@ -17,13 +17,20 @@ class Kanban:
         logging.debug("python Kanban run method")
         q = queue.Queue()
         q.queue = queue.deque(givenWork)
+
+        # run
         startTime = time.time()
+        threads = []
         for i in range(len(self.worker_pool)):
-            t = threading.Thread(target=self.worker_pool[i].run, args=(givenWork[i], q))
+            t = threading.Thread(target=self.worker_pool[i].run, args=(q,))
+            threads.append(t)
             t.start()
-        q.join()
-        t.join()
+
+        # wait for all threads to finish and the queue is empty
+        for t in threads:
+            t.join()
         endTime = time.time()
-        logging.debug("python Kanban run method done")
+
+        logging.debug("python Kanban run method took " + str(endTime - startTime) + " seconds")
         print("python Kanban run method took " + str(endTime - startTime) + " seconds")
         return
