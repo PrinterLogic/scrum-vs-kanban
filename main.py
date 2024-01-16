@@ -11,7 +11,7 @@ def main():
         logging.debug("logs directory already exists")
     logging.basicConfig(level=logging.DEBUG,
                         format='%(asctime)s %(levelname)s %(message)s',
-                        filename='logs/python.log',
+                        filename='logs/main.log',
                         filemode='w')
     logging.debug("python main function")
 
