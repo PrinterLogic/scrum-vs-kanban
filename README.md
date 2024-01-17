@@ -23,10 +23,10 @@ Kanban works by assigning all workers one ticket and when a worker is done with 
 Scrum works by assigning all estimated tickets to workers to fill up a sprint log. All workers work to complete the sprint and move to the next sprint when complete. Due to the makeup of the teams above, we are going to be using 32 points for a sprint.
 
 ### Scrum specific assumptions
-1* Most people don't let their teammembers struggle with overloaded work.
+1. Most people don't let their teammembers struggle with overloaded work.
 Instead, if someone has fallen behind, a member of the team usually picks up work that is still left hanging.
 We will simulate this by letting every worker go through the sprint "backlog" until the sprint is complete.
-2* Instead of defining a sprint interval as a set time, instead we accept that a sprint is complete when all task work in a sprint is done and allow the workers to move to the next sprint.
+2. Instead of defining a sprint interval as a set time, instead we accept that a sprint is complete when all task work in a sprint is done and allow the workers to move to the next sprint.
 Otherwise, the time to complete would be calculable by the formula: `SUM(totalWork) * sprintTime / sprintSize`
 
 ## How to Run
